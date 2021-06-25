@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card border-0">
+            <div class="card shadow-sm border-0">
                 <div class="card-header border-0 bg-primary text-white">AUTHORIZED PERSON ONLY (CDD ADMIN | GUARD)</div>
 
                 <div class="card-body">
