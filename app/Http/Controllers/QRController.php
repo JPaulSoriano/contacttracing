@@ -7,10 +7,6 @@ use App\Tracing;
 
 class QRController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     
     public function generateQrCode($id) 
     {
