@@ -12,7 +12,6 @@
     <table class="table table-bordered table-responsive" id="tracings">
     <thead>
         <tr>
-            <th>No</th>
             <th>Registered at</th>
             <th>Visited at</th>
             <th>Name</th>
@@ -25,7 +24,6 @@
         @foreach ($timevisits as $timevisit)
     <tbody>
         <tr>
-            <td>{{ ++$i }}</td>
             <td>{{ $timevisit->tracing->created_at }}</td>
             <td>{{ $timevisit->created_at }}</td>
             <td>{{ $timevisit->tracing->full_name }}</td>
@@ -42,7 +40,6 @@
     </tbody>
     </table>
   
-    {!! $timevisits->links() !!}
 </div>   
 
 

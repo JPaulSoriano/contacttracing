@@ -17,10 +17,8 @@ class TracingController extends Controller
     public function index(){
 
         $tracings = Tracing::all();
-
-        $timevisits = TimeVisit::latest()->paginate(5);
-        return view('tracings.index',compact('timevisits', 'tracings'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $timevisits = TimeVisit::all();
+        return view('tracings.index',compact('timevisits', 'tracings'));
 
 
 
