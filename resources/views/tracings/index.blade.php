@@ -9,10 +9,11 @@
         </div>
     @endif
    
-    <table class="table table-bordered" id="tracings">
+    <table class="table table-bordered table-responsive" id="tracings">
     <thead>
         <tr>
             <th>No</th>
+            <th>Registered at</th>
             <th>Visited at</th>
             <th>Name</th>
             <th>Email</th>
@@ -25,6 +26,7 @@
     <tbody>
         <tr>
             <td>{{ ++$i }}</td>
+            <td>{{ $timevisit->tracing->created_at }}</td>
             <td>{{ $timevisit->created_at }}</td>
             <td>{{ $timevisit->tracing->full_name }}</td>
             <td>{{ $timevisit->tracing->email }}</td>
