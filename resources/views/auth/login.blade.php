@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Only authorized persons can login</div>
+            <div class="card border-0">
+                <div class="card-header border-0 bg-primary text-white">AUTHORIZED PERSON ONLY (CDD ADMIN | GUARD)</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
