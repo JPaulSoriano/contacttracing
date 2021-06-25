@@ -21,6 +21,6 @@ Route::get('/', function () {
 Route::get('/qrcode/{id}', 'QRController@generateQrCode');
 Route::resource('tracings','TracingController');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
