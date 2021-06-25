@@ -60,19 +60,19 @@
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
-                            <label>Street:</label>
+                            <label>Street | Barangay:</label>
                             <input type="text" name="street" class="form-control" placeholder="Street">
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
-                            <label>City:</label>
+                            <label>City | Town:</label>
                             <input type="text" name="city" class="form-control" placeholder="City">
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="form-group">
-                            <label>Province:</label>
+                            <label>Province | State:</label>
                             <input type="text" name="province" class="form-control" placeholder="Province">
                         </div>
                     </div>
