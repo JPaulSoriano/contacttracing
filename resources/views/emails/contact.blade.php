@@ -3,7 +3,7 @@
 {{ $qr->full_name }}
 </div>
 <div align="center">
-Present this QR to the Gaurd before entering the campus.
+Present this QR to the Guard before entering the campus.
 </div>
 <div align="center">
 <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(250)
