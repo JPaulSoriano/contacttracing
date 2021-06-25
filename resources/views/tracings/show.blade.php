@@ -10,10 +10,12 @@
                 <div class="card-header border-0 bg-primary"><div class="text-white mb-0 text-uppercase h2 font-weight-bold text-center">{{$tracing->full_name}}</div></div>
                 <div class="card-body text-primary">
                     <div class="text-primary"><i class="bi bi-person-fill"></i> {{$tracing->age}}</div>
-                    <div class="text-primary"><i class="bi bi-envelope-fill"></i> {{$tracing->email}}</div>
+                    <div class="text-primary"><i class="bi bi-at"></i> {{$tracing->email}}</div>
                     <div class="text-primary"><i class="bi bi-telephone-fill"></i> {{$tracing->phone}}</div>
                     <div class="text-primary"><i class="bi bi-geo-alt-fill"></i> {{$tracing->street}} {{$tracing->city}} {{$tracing->province}}</div>
-                    <div class="text-primary"><i class="bi bi-text-paragraph"></i> 
+                    <div class="text-primary"><i class="bi bi-book-fill"></i> {{$tracing->course}}</div>
+                    <div class="text-primary"><i class="bi bi-shield-fill"></i> {{$tracing->stud_type}}</div>
+                    <div class="text-primary"><i class="bi bi-layout-text-sidebar"></i> 
                         @foreach($tracing->purpose as $value)
                         {{$value}},
                         @endforeach

@@ -16,7 +16,9 @@ class Tracing extends Model
         'street',
         'city',
         'province',
-        'purpose'
+        'purpose',
+        'course',
+        'stud_type'
     ];
 
     public function timevisit()

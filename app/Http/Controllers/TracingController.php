@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Tracing;
 use App\TimeVisit;
+use App\Mail\ContactTracingMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 class TracingController extends Controller
@@ -42,11 +44,15 @@ class TracingController extends Controller
             'street' => 'required',
             'city' => 'required',
             'province' => 'required',
-            'purpose' => 'required'
+            'purpose' => 'required',
+            'course' => 'required',
+            'stud_type' => 'required'
         ]);
   
 
         $tracing = Tracing::create($request->all());
+
+        Mail::to($request->email)->send(new ContactTracingMail($tracing));
 
         return redirect('/qrcode/'.$tracing->id);
     }

@@ -25,6 +25,8 @@ class CreateTracingsTable extends Migration
             $table->string('city');
             $table->string('province');
             $table->string('purpose');
+            $table->string('course');
+            $table->string('stud_type');
             $table->timestamps();
         });
     }

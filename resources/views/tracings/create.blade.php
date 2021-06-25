@@ -78,6 +78,24 @@
                     </div>
 
                     <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label>Course:</label>
+                            <input type="text" name="course" class="form-control" placeholder="Course">
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                                    <label>Type</label>
+                                    <select class="form-control" name="stud_type">
+                                        <option value="New">New</option>
+                                        <option value="Old">Old</option>
+                                        <option value="Transferee">Transferee</option>
+                                    </select>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
                                 <label>Purpose of Visit :</label><br>
                                 <label><input type="checkbox" name="purpose[]" value="Submit school documents"> SUBMIT SCHOOL DOCUMENTS</label><br>
@@ -87,6 +105,7 @@
                                 <label><input type="checkbox" name="purpose[]" value="Others"> OTHERS</label>
                             </div> 
                     </div>
+
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
