@@ -18,7 +18,8 @@ class TracingController extends Controller
 
         $tracings = Tracing::all();
         $timevisits = TimeVisit::all();
-        return view('tracings.index',compact('timevisits', 'tracings'));
+        return view('tracings.index',compact('timevisits', 'tracings'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
 
 
 
