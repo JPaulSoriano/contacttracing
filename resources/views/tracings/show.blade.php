@@ -15,6 +15,9 @@
                     <div class="text-primary"><i class="bi bi-geo-alt-fill"></i> {{$tracing->street}} {{$tracing->city}} {{$tracing->province}}</div>
                     <div class="text-primary"><i class="bi bi-book-fill"></i> {{$tracing->course}}</div>
                     <div class="text-primary"><i class="bi bi-shield-fill"></i> {{$tracing->stud_type}}</div>
+                    <div class="text-primary"><i class="bi bi-person-fill"></i> {{$tracing->created_at}}</div>
+                    <div class="text-primary"><i class="bi bi-person-fill"></i> {{$tracing->est_date}}</div>
+                    <div class="text-primary"><i class="bi bi-person-fill"></i> {{ $tracing->timevisit->last()->created_at }}</div>
                     <div class="text-primary"><i class="bi bi-layout-text-sidebar"></i> 
                         @foreach($tracing->purpose as $value)
                         {{$value}},

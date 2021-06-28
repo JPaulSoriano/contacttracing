@@ -18,7 +18,8 @@ class Tracing extends Model
         'province',
         'purpose',
         'course',
-        'stud_type'
+        'stud_type',
+        'est_date'
     ];
 
     public function timevisit()
@@ -45,4 +46,5 @@ class Tracing extends Model
     {
         return $this->attributes['purpose'] = json_decode($value);
     }
+
 }

@@ -72,4 +72,6 @@ class TracingController extends Controller
                         ->with('success','Tracing deleted successfully');
 
     }
+
+    
 }

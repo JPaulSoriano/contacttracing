@@ -34,9 +34,7 @@
     <div class="row justify-content-center my-5">
         <div class="col-md-8">
             <p class="text-center text-primary font-weight-bold">
-            SCREENSHOT YOUR QR CODE<br>
-            OR</br>
-            LOOK AT YOUR EMAIL
+            SCREENSHOT YOUR QR CODE OR LOOK AT YOUR EMAIL
             </p>
         </div>
     </div>

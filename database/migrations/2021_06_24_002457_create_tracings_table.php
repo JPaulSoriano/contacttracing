@@ -27,6 +27,7 @@ class CreateTracingsTable extends Migration
             $table->string('purpose');
             $table->string('course');
             $table->string('stud_type');
+            $table->string('est_date');
             $table->timestamps();
         });
     }
