@@ -3,17 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center my-5">
-        <div class="col-md-4">
+        <div class="col-md-8">
             <p class="text-center text-primary font-weight-bold">
             PRESENT THIS QR CODE TO THE GUARD BEFORE ENTERING THE CAMPUS
-            </p>
-        </div>
-    </div>
-
-    <div class="row justify-content-center my-5">
-        <div class="col-md-4">
-            <p class="text-center text-primary text-lead">
-            Screenshot your QR Code
             </p>
         </div>
     </div>
@@ -40,15 +32,17 @@
     </div>
 
     <div class="row justify-content-center my-5">
-        <div class="col-md-4">
+        <div class="col-md-8">
             <p class="text-center text-primary font-weight-bold">
+            SCREENSHOT YOUR QR CODE<br>
+            OR</br>
             QR CODE SENT TO YOUR EMAIL. PLEASE PRESENT THE QR CODE TO THE SCHOOL GUARD BEFORE ENTERING THE SCHOOL CAMPUS. STAY SAFE ALWAY
             </p>
         </div>
     </div>
 
     <div class="row justify-content-center my-3">
-        <div class="col-md-4">
+        <div class="col-md-8">
             <p class="text-center text-primary text-lead">
             Note: If GMAIL APP is blocking the QR Code for security reasons please try other EMAIL APP like Stock Android Email or Stock iOS Email App.
             </p>
