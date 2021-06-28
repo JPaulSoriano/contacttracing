@@ -5,7 +5,7 @@
     <div class="row justify-content-center my-5">
         <div class="col-md-8">
             <p class="text-center text-primary font-weight-bold">
-            PRESENT THIS QR CODE TO THE GUARD BEFORE ENTERING THE CAMPUS
+            QR CODE SENT TO YOUR EMAIL PLEASE PRESENT THE QR CODE TO THE SCHOOL GUARD BEFORE ENTERING THE SCHOOL CAMPUS. STAY SAFE ALWAY
             </p>
         </div>
     </div>
@@ -36,7 +36,7 @@
             <p class="text-center text-primary font-weight-bold">
             SCREENSHOT YOUR QR CODE<br>
             OR</br>
-            QR CODE SENT TO YOUR EMAIL. PLEASE PRESENT THE QR CODE TO THE SCHOOL GUARD BEFORE ENTERING THE SCHOOL CAMPUS. STAY SAFE ALWAY
+            LOOK AT YOUR EMAIL
             </p>
         </div>
     </div>
