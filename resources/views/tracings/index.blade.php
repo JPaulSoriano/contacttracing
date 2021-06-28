@@ -14,7 +14,7 @@
         <tr>
             <th>No</th>
             <th>Registered at</th>
-            <th>Estimate Vistit Date</th>
+            <th>Estimate Visit Date</th>
             <th>Visited at</th>
             <th>Name</th>
             <th>Email</th>
