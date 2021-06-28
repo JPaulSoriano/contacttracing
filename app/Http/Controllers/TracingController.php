@@ -46,7 +46,8 @@ class TracingController extends Controller
             'province' => 'required',
             'purpose' => 'required',
             'course' => 'required',
-            'stud_type' => 'required'
+            'stud_type' => 'required',
+            'est_date' => 'required'
         ]);
   
 

@@ -97,8 +97,8 @@
                     
                     <div class="col-xs-3 col-sm-3 col-md-3">
                         <div class="form-group">
-                            <label>Estimated Date Arrival:</label>
-                            <input type="date" name="est_date" class="form-control" placeholder="Estimated Date">
+                            <label>Date of Visit:</label>
+                            <input type="date" name="est_date" class="form-control" placeholder="Date of Visit">
                         </div>
                     </div>
 
