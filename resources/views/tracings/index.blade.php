@@ -14,6 +14,7 @@
         <tr>
             <th>No</th>
             <th>Registered at</th>
+            <th>Estimate Vistit Date</th>
             <th>Visited at</th>
             <th>Name</th>
             <th>Email</th>
@@ -27,6 +28,7 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $timevisit->tracing->created_at }}</td>
+            <td>{{ $timevisit->tracing->est_date }}</td>
             <td>{{ $timevisit->created_at }}</td>
             <td>{{ $timevisit->tracing->full_name }}</td>
             <td>{{ $timevisit->tracing->email }}</td>
