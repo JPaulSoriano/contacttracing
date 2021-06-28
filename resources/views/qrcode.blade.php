@@ -9,6 +9,15 @@
             </p>
         </div>
     </div>
+
+    <div class="row justify-content-center my-5">
+        <div class="col-md-4">
+            <p class="text-center text-primary text-lead">
+            Screenshot your QR Code
+            </p>
+        </div>
+    </div>
+
     <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="card shadow-sm border-0">
@@ -27,6 +36,22 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center my-5">
+        <div class="col-md-4">
+            <p class="text-center text-primary font-weight-bold">
+            QR CODE SENT TO YOUR EMAIL. PLEASE PRESENT THE QR CODE TO THE SCHOOL GUARD BEFORE ENTERING THE SCHOOL CAMPUS. STAY SAFE ALWAY
+            </p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center my-3">
+        <div class="col-md-4">
+            <p class="text-center text-primary text-lead">
+            Note: If GMAIL APP is blocking the QR Code for security reasons please try other EMAIL APP like Stock Android Email or Stock iOS Email App.
+            </p>
         </div>
     </div>
 </div>
