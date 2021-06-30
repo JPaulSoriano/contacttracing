@@ -1,7 +1,7 @@
 @extends('layouts.app')
  
 @section('content')
-<div class="container">
+<div class="container-fluid">
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -9,6 +9,7 @@
         </div>
     @endif
    
+    <h1 class="text-center font-weight-bold text-primary">Traced</h1>
     <table class="table table-bordered table-responsive" id="tracings">
     <thead>
         <tr>

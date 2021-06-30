@@ -8,7 +8,8 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-   
+    <h1 class="text-center font-weight-bold text-primary">Registered</h1>
+
     <table class="table table-bordered table-responsive" id="tracings">
     <thead>
         <tr>
