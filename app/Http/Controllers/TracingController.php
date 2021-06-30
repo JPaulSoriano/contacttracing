@@ -22,9 +22,20 @@ class TracingController extends Controller
         $timevisits = TimeVisit::all();
         return view('tracings.index',compact('timevisits', 'tracings'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 
 
+    public function traced(){
+        $tracings = Tracing::all();
+        $timevisits = TimeVisit::all();
+        return view('tracings.traced',compact('timevisits', 'tracings'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 
+    public function registered(){
+        $tracings = Tracing::all();
+        return view('tracings.registered',compact('tracings'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create(){
