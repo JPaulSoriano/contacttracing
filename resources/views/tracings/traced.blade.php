@@ -11,7 +11,7 @@
    
     <h1 class="text-center font-weight-bold text-primary">Traced</h1>
     <table class="table table-bordered table-responsive" id="tracings">
-    <thead>
+    <thead class="bg-primary text-white text-center">
         <tr>
             <th>No</th>
             <th>Registered at</th>
