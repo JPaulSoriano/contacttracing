@@ -18,6 +18,7 @@
             <th>Estimate Visit Date</th>
             <th>Visited at</th>
             <th>Name</th>
+            <th>Course</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Address</th>
@@ -32,6 +33,7 @@
             <td>{{ $timevisit->tracing->est_date }}</td>
             <td>{{ $timevisit->created_at }}</td>
             <td>{{ $timevisit->tracing->full_name }}</td>
+            <td>{{ $timevisit->tracing->course }}</td>
             <td>{{ $timevisit->tracing->email }}</td>
             <td>{{ $timevisit->tracing->phone }}</td>
             <td>{{ $timevisit->tracing->full_address }}</td>
