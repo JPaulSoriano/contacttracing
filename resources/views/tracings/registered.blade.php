@@ -18,6 +18,7 @@
             <th>Estimate Visit Date</th>
             <th>Name</th>
             <th>Course</th>
+            <th>Type</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Address</th>
@@ -32,6 +33,7 @@
             <td>{{ $tracing->est_date }}</td>
             <td>{{ $tracing->full_name }}</td>
             <td>{{ $tracing->course }}</td>
+            <td>{{ $tracing->stud_type }}</td>
             <td>{{ $tracing->email }}</td>
             <td>{{ $tracing->phone }}</td>
             <td>{{ $tracing->full_address }}</td>
