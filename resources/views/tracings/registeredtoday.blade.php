@@ -8,8 +8,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-   
-    <h1 class="text-center font-weight-bold text-primary">Traced</h1>
+    <h1 class="text-center font-weight-bold text-primary">Registered Today</h1>
 
     <table class="table table-bordered table-responsive" id="tracings">
     <thead class="bg-primary text-white text-center">
@@ -17,7 +16,6 @@
             <th>No</th>
             <th>Registered at</th>
             <th>Estimate Visit Date</th>
-            <th>Visited at</th>
             <th>Name</th>
             <th>Course</th>
             <th>Type</th>
@@ -28,20 +26,19 @@
         </tr>
     </thead>
     <tbody>
-    @foreach ($timevisits as $timevisit)
+    @foreach ($tracings as $tracing)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $timevisit->tracing->created_at }}</td>
-            <td>{{ $timevisit->tracing->est_date }}</td>
-            <td>{{ $timevisit->created_at }}</td>
-            <td>{{ $timevisit->tracing->full_name }}</td>
-            <td>{{ $timevisit->tracing->course }}</td>
-            <td>{{ $timevisit->tracing->stud_type }}</td>
-            <td>{{ $timevisit->tracing->email }}</td>
-            <td>{{ $timevisit->tracing->phone }}</td>
-            <td>{{ $timevisit->tracing->full_address }}</td>
+            <td>{{ $tracing->created_at }}</td>
+            <td>{{ $tracing->est_date }}</td>
+            <td>{{ $tracing->full_name }}</td>
+            <td>{{ $tracing->course }}</td>
+            <td>{{ $tracing->stud_type }}</td>
+            <td>{{ $tracing->email }}</td>
+            <td>{{ $tracing->phone }}</td>
+            <td>{{ $tracing->full_address }}</td>
             <td>
-                @foreach($timevisit->tracing->purpose as $value)
+                @foreach($tracing->purpose as $value)
                     {{$value}},
                 @endforeach
             </td>

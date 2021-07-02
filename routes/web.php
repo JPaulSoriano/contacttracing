@@ -22,6 +22,9 @@ Route::get('/qrcode/{id}', 'QRController@generateQrCode');
 Route::resource('tracings','TracingController');
 Route::get('/registered', 'TracingController@registered')->name('registered');
 Route::get('/traced', 'TracingController@traced')->name('traced');
+Route::get('/tracedtoday', 'TracingController@tracedtoday')->name('tracedtoday');
+Route::get('/registeredtoday', 'TracingController@registeredtoday')->name('registeredtoday');
+Route::get('/estdate', 'TracingController@estdate')->name('estdate');
 
 Auth::routes(['register' => false]);
 

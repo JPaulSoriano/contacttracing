@@ -6,6 +6,7 @@ use App\TimeVisit;
 use App\Mail\ContactTracingMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TracingController extends Controller
 {
@@ -17,18 +18,26 @@ class TracingController extends Controller
     }
     
     public function index(){
+        $tracings = DB::table('tracings')->count();
+        $tracingstoday = DB::table('tracings')->whereDate('created_at', '=', date('Y-m-d'))->count();
 
-        $tracings = Tracing::all();
-        $timevisits = TimeVisit::all();
-        return view('tracings.index',compact('timevisits', 'tracings'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $timevisits = DB::table('time_visits')->count();
+        $timevisitstoday = DB::table('time_visits')->whereDate('created_at', '=', date('Y-m-d'))->count();
+
+        $estdate = DB::table('tracings')->whereDate('est_date', '=', date('Y-m-d'))->count();
+        return view('tracings.index',compact('timevisits', 'tracings', 'tracingstoday', 'timevisitstoday', 'estdate'));
     }
 
 
     public function traced(){
-        $tracings = Tracing::all();
         $timevisits = TimeVisit::all();
-        return view('tracings.traced',compact('timevisits', 'tracings'))
+        return view('tracings.traced',compact('timevisits'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function tracedtoday(){
+        $timevisits = TimeVisit::whereDate('created_at', '=', date('Y-m-d'))->get();
+        return view('tracings.tracedtoday', compact('timevisits'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -36,6 +45,20 @@ class TracingController extends Controller
         $tracings = Tracing::all();
         return view('tracings.registered',compact('tracings'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+
+    public function registeredtoday(){
+        $tracings = Tracing::whereDate('created_at', '=', date('Y-m-d'))->get();
+        return view('tracings.registeredtoday', compact('tracings'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+
+    public function estdate(){
+        $estdate = Tracing::whereDate('est_date', '=', date('Y-m-d'))->get();
+        return view('tracings.estdate', compact('estdate'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create(){

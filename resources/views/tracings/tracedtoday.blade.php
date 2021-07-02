@@ -9,7 +9,7 @@
         </div>
     @endif
    
-    <h1 class="text-center font-weight-bold text-primary">Traced</h1>
+    <h1 class="text-center font-weight-bold text-primary">Traced Today</h1>
 
     <table class="table table-bordered table-responsive" id="tracings">
     <thead class="bg-primary text-white text-center">
