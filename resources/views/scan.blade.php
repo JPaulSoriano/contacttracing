@@ -1,42 +1,72 @@
 @extends('layouts.app')
 @section('head')
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+<style>
+video {
+  margin: 1rem;
+  max-width: 90vw;
+}
+
+.camera-list {
+  margin-top: 1rem;
+}
+</style>
 <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 @endsection
 @section('content')
-<div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <video id="preview" width="100%"></video>
-                </div>
-                <div class="col-md-6">
-                    <label>SCAN QR CODE</label>
-                    <input type="text" name="text" id="text" readonyy="" placeholder="scan qrcode" class="form-control">
-                </div>
-            </div>
-        </div>
+<section class="camera-list">
+      <ul id="cameras"></ul>
+    </section>
+    <video id="preview"></video>
+    <ul id="scannedText"></ul>
 
 	
 @endsection
 @section('scripts')
-<script>
-           let scanner = new Instascan.Scanner({ video: document.getElementById('preview')});
-           Instascan.Camera.getCameras().then(function(cameras){
-               if(cameras.length > 0 ){
-                   scanner.start(cameras[0]);
-               } else{
-                   alert('No cameras found');
-               }
+<script type="text/javascript">
+      const $cameras = document.getElementById('cameras');
+      const $scannedText = document.getElementById('scannedText');
+      const $preview = document.getElementById('preview');
+      let CAMERAS = [];
 
-           }).catch(function(e) {
-               console.error(e);
-           });
+      let scanner = new Instascan.Scanner({ video: $preview,/* continuous: false*/ });
+      scanner.addListener('scan', function (content) {
+        console.log(content);
+        scanOutput(content);
+      });
 
-           scanner.addListener('scan',function(c){
-               document.getElementById('text').value=c;
-           });
+      Instascan.Camera.getCameras().then(function (cameras) {
+        if (cameras.length === 0) {
+          console.error('No cameras found.');
+          return;
+        }
+        cameras.forEach( el => addCameraToList(el) );
+        CAMERAS = cameras;
+      }).catch(function (e) {
+        console.error(e);
+      });
 
-        </script>
+      $cameras.addEventListener('click', scannerStart);
+
+      function scannerStart(event) {
+        let activeCamera = CAMERAS.find( el => el.id === event.target.id );
+        scanner.start(activeCamera);
+      }
+
+      function addCameraToList (el) {
+        let a = document.createElement("a");
+        let newItem = document.createElement("li");
+
+        a.textContent = el.name;
+        a.setAttribute('id', el.id);
+        a.setAttribute('href', "#");
+        newItem.appendChild(a);
+        $cameras.appendChild(newItem);
+      }
+
+      function scanOutput(content) {
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode(content));
+        $scannedText.appendChild(li);
+      }
+    </script>
 @endsection
