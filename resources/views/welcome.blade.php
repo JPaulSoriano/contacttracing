@@ -8,6 +8,7 @@
         <p class="text-center h1">{{ $message }}</p>
     </div>
 @endif
+<div class="display-1">UNDER MAINTENANCE</div>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-8 text-center">
             <div class="jumbotron ">
