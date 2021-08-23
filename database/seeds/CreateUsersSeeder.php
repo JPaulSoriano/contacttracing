@@ -17,7 +17,7 @@ class CreateUsersSeeder extends Seeder
                'username'=>'Admin',
                'email'=>'admin@admin.com',
                 'is_admin'=>'1',
-               'password'=> bcrypt('password'),
+               'password'=> bcrypt('arcreactor2021'),
             ],
         ];
   
