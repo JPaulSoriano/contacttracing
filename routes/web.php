@@ -17,15 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
 
-Route::get('/qrcode/{id}', 'QRController@generateQrCode');
-Route::resource('tracings','TracingController');
-Route::get('/registered', 'TracingController@registered')->name('registered');
-Route::get('/traced', 'TracingController@traced')->name('traced');
-Route::get('/tracedtoday', 'TracingController@tracedtoday')->name('tracedtoday');
-Route::get('/registeredtoday', 'TracingController@registeredtoday')->name('registeredtoday');
-Route::get('/estdate', 'TracingController@estdate')->name('estdate');
 
-Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('offices','OfficeController')->middleware('is_admin');
+Route::resource('transactions','TransactionController')->middleware('is_admin');
+Route::resource('appointments','AppointmentController')->middleware('auth');
+Route::resource('users','UserController')->middleware('is_admin');
+Route::get('admin/home', 'HomeController@adminhome')->name('adminhome')->middleware('is_admin');
+
+Route::delete('/refuse/{appointment}', 'AppointmentController@refuse')->name('refuse')->middleware('auth');
+Route::get('/approve/{appointment}', 'AppointmentController@approve')->name('approve')->middleware('auth');
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/staffappointments', 'AppointmentController@staffindex')->name('staffindex')->middleware('auth');
+Route::get('/scan', 'AppointmentController@scan')->name('scan')->middleware('auth');
+
+
+Route::get('/qrcode/{id}', 'QRController@generateQrCode')->name('qrcode');

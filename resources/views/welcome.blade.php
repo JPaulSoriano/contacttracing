@@ -1,16 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
-<div class="row d-flex justify-content-center">
-        <div class="col-lg-8">
-            <div class="jumbotron">
+@if ($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p class="text-center h1">{{ $message }}</p>
+    </div>
+@endif
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 text-center">
+            <div class="jumbotron ">
             <img src="{{ asset('images/logo.png') }}" class="img-responsive center-block d-block mx-auto my-3" style="height: 150px">
-            <h1 class="text-primary font-weight-bold text-center">Contact Tracing</h1>
-            <hr class="my-4">
-            <a href="{{ route('tracings.create') }}" type="button" class="btn btn-lg btn-block btn-primary">Continue</a>
+            <h1 class="text-primary font-weight-bold text-center">Colegio de Dagupan</h1>
+            <h3 class="text-primary font-weight-bold text-center">Online Appointment</h3>
             </div>
         </div>
     </div>
+
+
 </div>
 @endsection

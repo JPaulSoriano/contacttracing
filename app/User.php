@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password', 'is_admin', 'office_id', 'first_name', 'last_name', 'middle_name', 'course', 'address', 'phone', 'year', 'student_number'
     ];
 
     /**
@@ -36,4 +36,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
+
+    public function office()
+    {
+        return $this->belongsTo(Office::class);
+    }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->last_name}, {$this->first_name} {$this->middle_name}";
+    }
+
+
 }
