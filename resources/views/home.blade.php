@@ -13,8 +13,8 @@
 <div class="row justify-content-center mt-5">
         <div class="col-lg-6">
             <div class="jumbotron ">
-            <h2>WELCOME!</h2>
-            <p >{{ Auth::user()->username }}</p>
+            <h1 class="font-weight-bold">WELCOME!</h1>
+            <p class="h4">{{ Auth::user()->username }}</p>
             </div>
         </div>
     </div>

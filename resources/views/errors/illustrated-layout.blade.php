@@ -468,6 +468,7 @@
 
                     <p class="text-grey-darker text-2xl md:text-3xl font-light mb-8 leading-normal">
                         @yield('message')
+                        @yield('message2')
                     </p>
 
                     <a href="{{ app('router')->has('home') ? route('home') : url('/') }}">

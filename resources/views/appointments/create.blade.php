@@ -24,7 +24,7 @@
             <div class="card">
                 <div class="card-header bg-primary text-white">Transactions</div>
                 <div class="card-body">
-                    <p>Note: One Office Only Per Visit</p>
+                    <p class="text-danger font-weight-bold">Note: One Office Only Per Visit</p>
                     <div class="row my-3">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
