@@ -36,7 +36,7 @@
                 @foreach ($appointments as $appointment)
                 <tr>
                     <td>{{ ++$i }}</td>
-                    <td>{{ $appointment->user->full_name }}</td>
+                    <td>{{ optional($appointment->user)->full_name }}</td>
                     <td>{{ $appointment->transaction->name }}</td>
                     <td>{{ $appointment->transaction->office->name }}</td>
                     <td>{{ $appointment->proposed_date }}</td>
