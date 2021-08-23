@@ -8,8 +8,6 @@
         <p class="text-center h1">{{ $message }}</p>
     </div>
 @endif
-<h1>UNDER MAINTENANCE</h1>
-<h3>WAIT FOR THE ANNOUNCEMENT ON THE CDD PAGE</h3>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-8 text-center">
             <div class="jumbotron ">
