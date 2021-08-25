@@ -51,6 +51,9 @@
                         @else
                             @can('is_admin')
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('adminhome') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('users.index') }}">Users</a>
                             </li>
                             <li class="nav-item">
@@ -60,17 +63,11 @@
                                 <a class="nav-link" href="{{ route('transactions.index') }}">Transactions</a>
                             </li>
                             @endcan
-                            @if(Auth::user()->office_id != 0)
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('staffindex') }}">Appointments</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('scan') }}">Scan</a>
-                            </li>
-                            @endif
+                            @if(Auth::user()->is_admin != 1)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                             </li>
+                            @endif
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->username }}
@@ -109,26 +106,6 @@
 </script>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-<script>
-        let scanner = new Instascan.Scanner(
-            {
-                video: document.getElementById('preview'),
-                mirror: false
-            }
-        );
-        scanner.addListener('scan', function(content) {
-            alert('Scanned the contents:' + content);
-            window.open(content, "_blank");
-        });
-        Instascan.Camera.getCameras().then(cameras => 
-        {
-            if(cameras.length > 0){
-                scanner.start(cameras[1]);
-            } else {
-                console.error("There is no camera on the device!");
-            }
-        });
-    </script>
 
 </body>
 </html>

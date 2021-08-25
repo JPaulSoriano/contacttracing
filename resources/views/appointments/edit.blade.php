@@ -29,7 +29,7 @@
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label>NAME:</label>
-                                <span class="font-weight-bold">{{ $appointment->user->name }}</span>
+                                <span class="font-weight-bold">{{ $appointment->user->full_name }}</span>
                             </div>
                         </div>
                         <div class="col-lg-8">

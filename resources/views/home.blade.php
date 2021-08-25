@@ -10,14 +10,26 @@
 @endif
 
 @if(Auth::user()->office_id != 0)
-<div class="row justify-content-center mt-5">
-        <div class="col-lg-6">
-            <div class="jumbotron ">
-            <h1 class="font-weight-bold">WELCOME!</h1>
-            <p class="h4">{{ Auth::user()->username }}</p>
-            </div>
+
+
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <a class="btn btn-sm btn-block btn-primary p-5 my-3" href="{{ route('approved') }}">Approved </br> {{$approvecount}}</a>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn btn-sm btn-block btn-primary p-5 my-3" href="{{ route('unapproved') }}">Unapproved </br> {{$unapprovecount}}</a>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn btn-sm btn-block btn-primary p-5 my-3" href="{{ route('staffindex') }}">All Appointments </br> {{$all}}</a>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn btn-sm btn-block btn-primary p-5 my-3" href="{{ route('tomorrow') }}">Proposed to go tomorrow </br> {{$tomorrow}}</a>
+        </div>
+        <div class="col-lg-4">
+            <a class="btn btn-sm btn-block btn-primary p-5 my-3" href="{{ route('today') }}">Proposed to go today </br> {{$today}}</a>
         </div>
     </div>
+
 @else
     <div class="row justify-content-center mt-5">
         <div class="col-lg-6">
@@ -28,7 +40,8 @@
             </div>
         </div>
     </div>
+    
 @endif
 
-</div>
+
 @endsection

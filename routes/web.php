@@ -32,7 +32,12 @@ Route::get('/approve/{appointment}', 'AppointmentController@approve')->name('app
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/staffappointments', 'AppointmentController@staffindex')->name('staffindex')->middleware('auth');
-Route::get('/scan', 'AppointmentController@scan')->name('scan')->middleware('auth');
+Route::get('/unapproved', 'AppointmentController@unapproved')->name('unapproved')->middleware('auth');
+Route::get('/approved', 'AppointmentController@approved')->name('approved')->middleware('auth');
+Route::get('/tomorrow', 'AppointmentController@tomorrow')->name('tomorrow')->middleware('auth');
+Route::get('/today', 'AppointmentController@today')->name('today')->middleware('auth');
+
+
 
 
 Route::get('/qrcode/{id}', 'QRController@generateQrCode')->name('qrcode');

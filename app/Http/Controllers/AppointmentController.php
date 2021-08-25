@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Transaction;
 use App\Office;
 use App\Appointment;
+use Carbon\Carbon;
+use Carbon\CarbonPeriod;
 
 class AppointmentController extends Controller
 {
@@ -20,10 +22,48 @@ class AppointmentController extends Controller
     {
         $appointments = Appointment::whereHas('transaction.office', function($query){
             $query->where('id', Auth::user()->office_id);
-        })->get();
+        })->orderBy('created_at', 'desc')->paginate(10);
 
         return view('appointments.staffindex',compact('appointments'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function unapproved()
+    {
+        $appointments = Appointment::whereHas('transaction.office', function($query){
+            $query->where('id', Auth::user()->office_id);
+        })->where('status', '=', '0')->paginate(10);
+
+        return view('appointments.unapproved',compact('appointments'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function approved()
+    {
+        $appointments = Appointment::whereHas('transaction.office', function($query){
+            $query->where('id', Auth::user()->office_id);
+        })->where('status', '=', '1')->paginate(10);
+
+        return view('appointments.approved',compact('appointments'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function tomorrow()
+    {
+        $appointments = Appointment::whereHas('transaction.office', function($query){
+            $query->where('id', Auth::user()->office_id);
+        })->where('proposed_date', '=', Carbon::tomorrow()->format('Y-m-d'))->paginate(10);
+
+        return view('appointments.tomorrow',compact('appointments'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+    public function today()
+    {
+        $appointments = Appointment::whereHas('transaction.office', function($query){
+            $query->where('id', Auth::user()->office_id);
+        })->where('proposed_date', '=', Carbon::today()->format('Y-m-d'))->paginate(10);
+
+        return view('appointments.today',compact('appointments'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+    
+    
 
 
     public function create(Office $office)
