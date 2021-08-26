@@ -93,7 +93,7 @@ class AppointmentController extends Controller
         $appointment->status = '0';
         $appointment->save();
 
-        return redirect()->route('staffindex')->with('refused','TRANSACTION REFUSED!');
+        return redirect()->back()->with('refused','TRANSACTION REFUSED!');
     }
 
     public function approve(Appointment $appointment)
@@ -101,8 +101,9 @@ class AppointmentController extends Controller
         $appointment->status = '1';
         $appointment->save();
 
-        return redirect()->route('staffindex')->with('success','TRANSACTION APPROVED!');
+        return redirect()->back()->with('success','TRANSACTION APPROVED!');
     }
+
 
 
     public function edit(Appointment $appointment)
